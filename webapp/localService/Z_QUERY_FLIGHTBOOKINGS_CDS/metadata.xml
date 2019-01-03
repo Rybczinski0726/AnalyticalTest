@@ -1,0 +1,48 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="Z_QUERY_FLIGHTBOOKINGS_CDS" xml:lang="ko" sap:schema-version="1">
+			<EntityType Name="Z_QUERY_FLIGHTBOOKINGSType" sap:label="'Flight Bookings'" sap:semantics="aggregate" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:filterable="false" sap:updatable="false" sap:sortable="false"/><Property Name="TotaledProperties" Type="Edm.String" sap:aggregation-role="totaled-properties-list" sap:is-annotation="true"
+					sap:updatable="false" sap:sortable="false"/><Property Name="FlightDate" Type="Edm.String" sap:aggregation-role="dimension" sap:creatable="false" sap:text="FlightDate_T"
+					sap:updatable="false" sap:label="Flight Date"/><Property Name="FlightDate_T" Type="Edm.String" MaxLength="10" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Flight Date (Beschreibung)"/><Property Name="CalendarMonth" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="CalendarMonth_T" sap:updatable="false" sap:label="Flight Month"/><Property Name="CalendarMonth_T" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Flight Month (Beschreibung)"/><Property Name="CalendarYear" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Flight Year"/><Property Name="CustomerCountry" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="CustomerCountry_T" sap:updatable="false" sap:label="Customer Country"/><Property Name="CustomerCountry_T" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Customer Country (Beschreibung)"/><Property Name="TravelAgencyCountry" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="TravelAgencyCountry_T" sap:updatable="false" sap:label="Travel Agency Country"/><Property Name="TravelAgencyCountry_T" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Travel Agency Country (Beschreibung)"/><Property Name="TravelAgencyCity" Type="Edm.String" MaxLength="25" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:updatable="false" sap:label="Travel Agency Customer City"/><Property Name="CustomerCity" Type="Edm.String" MaxLength="25" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Customer City"/><Property Name="Currency" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Currency" sap:semantics="currency-code"/><Property Name="WeightUOM" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false" sap:updatable="false"
+					sap:label="Weight Unit" sap:semantics="unit-of-measure"/><Property Name="Airline" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:creatable="false" sap:text="Airline_T"
+					sap:updatable="false" sap:label="Airline"/><Property Name="Airline_T" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Airline (Beschreibung)"/><Property Name="FlightConnection" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:super-ordinate="Airline" sap:text="FlightConnection_T" sap:updatable="false" sap:label="Connection"/><Property Name="FlightConnection_T" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Connection (Beschreibung)"/><Property Name="Customer" Type="Edm.String" MaxLength="8" sap:aggregation-role="dimension" sap:creatable="false" sap:text="Customer_T"
+					sap:updatable="false" sap:label="Customer"/><Property Name="Customer_T" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Customer (Beschreibung)"/><Property Name="TravelAgency" Type="Edm.String" MaxLength="8" sap:aggregation-role="dimension" sap:creatable="false"
+					sap:text="TravelAgency_T" sap:updatable="false" sap:label="Travel Agency"/><Property Name="TravelAgency_T" Type="Edm.String" MaxLength="1333" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Travel Agency (Beschreibung)"/><Property Name="TotalOfBookings" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="TotalOfBookings_F" sap:updatable="false" sap:label="Total of Bookings"/><Property Name="TotalOfBookings_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Total of Bookings (Formatiert)"/><Property Name="WeightOfLuggage" Type="Edm.Decimal" Precision="42" Scale="4" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="WeightOfLuggage_F" sap:unit="WeightUOM" sap:updatable="false" sap:label="Weight of Luggage"/><Property Name="WeightOfLuggage_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Weight of Luggage (Formatiert)"/><Property Name="BookingPrice" Type="Edm.Decimal" Precision="42" Scale="2" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="BookingPrice_F" sap:unit="Currency" sap:updatable="false" sap:label="Booking Price"/><Property Name="BookingPrice_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="Booking Price (Formatiert)"/><Property Name="AverageWeightPerFlight" Type="Edm.Decimal" Precision="42" Scale="0" sap:aggregation-role="measure" sap:creatable="false"
+					sap:filterable="false" sap:text="AverageWeightPerFlight_F" sap:unit="AverageWeightPerFlight_E" sap:updatable="false"
+					sap:label="'Average Weight Per Flight'"/><Property Name="AverageWeightPerFlight_F" Type="Edm.String" MaxLength="60" sap:creatable="false" sap:filterable="false"
+					sap:updatable="false" sap:label="'Average Weight Per Flight' (Formatiert)"/><Property Name="AverageWeightPerFlight_E" Type="Edm.String" MaxLength="3" sap:creatable="false" sap:filterable="false" sap:updatable="false"
+					sap:label="'Average Weight Per Flight' (Einheit)" sap:semantics="unit-of-measure"/></EntityType>
+			<EntityType Name="ODataQueryAdditionalMetadata" sap:content-version="1">
+				<Key><PropertyRef Name="ODataQueryMetadata"/></Key><Property Name="ODataQueryMetadata" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ODataQueryMetadataValue_Current" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="ODataQueryMetadataValueAtDefine" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/></EntityType>
+			<EntityContainer Name="Z_QUERY_FLIGHTBOOKINGS_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="Z_QUERY_FLIGHTBOOKINGS" EntityType="Z_QUERY_FLIGHTBOOKINGS_CDS.Z_QUERY_FLIGHTBOOKINGSType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/><EntitySet Name="AdditionalMetadata" EntityType="Z_QUERY_FLIGHTBOOKINGS_CDS.ODataQueryAdditionalMetadata" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/Z_QUERY_FLIGHTBOOKINGS_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/Z_QUERY_FLIGHTBOOKINGS_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

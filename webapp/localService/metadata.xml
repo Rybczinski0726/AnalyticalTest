@@ -1,0 +1,21 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="YRYB_C_SBOOK_CDS" xml:lang="ko" sap:schema-version="1">
+			<EntityType Name="YRYB_C_SBOOKType" sap:content-version="1">
+				<Key><PropertyRef Name="carrid"/><PropertyRef Name="connid"/><PropertyRef Name="fldate"/><PropertyRef Name="bookid"/></Key><Property Name="carrid" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="UpperCase" sap:label="Fluggesellschaft"
+					sap:quickinfo="Kurzbezeichnung der Fluggesellschaft"/><Property Name="connid" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Verbindungs-Nummer"
+					sap:quickinfo="Code der Einzelflugverbindung"/><Property Name="fldate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Datum des Fluges"
+					sap:quickinfo="Flugdatum"/><Property Name="bookid" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative" sap:label="Buchungsnummer"/><Property Name="loccuram" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="loccurkey" sap:label="Betrag (Hauswährung)"
+					sap:quickinfo="Preis der Buchung in Hauswährung der Fluggesellschaft"/><Property Name="loccurkey" Type="Edm.String" MaxLength="5" sap:label="Währ. d. Flugg." sap:quickinfo="Hauswährung der Fluggesellschaft"
+					sap:semantics="currency-code"/></EntityType>
+			<EntityContainer Name="YRYB_C_SBOOK_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="YRYB_C_SBOOK" EntityType="YRYB_C_SBOOK_CDS.YRYB_C_SBOOKType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/YRYB_C_SBOOK_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/YRYB_C_SBOOK_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,155 @@
+<mvc:View controllerName="rybczinski.analytical.AnalyticalTest.controller.App" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable" xmlns:f="sap.f" xmlns:sv="sap.ui.comp.smartvariants" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:l="sap.ui.layout.form" xmlns:table="sap.ui.table">
+	<App id="idAppControl">
+		<pages>
+			<f:DynamicPage showFooter="true">
+				<f:title>
+					<f:DynamicPageTitle>
+						<!--<f:navigationActions>-->
+						<!--	<Button text="test"></Button>-->
+						<!--</f:navigationActions>-->
+						<f:heading>
+							<Toolbar>
+								<Title text="Test"></Title>
+							</Toolbar>
+							<sv:SmartVariantManagement id="__SVM01" persistencyKey="SmartFilter_ZTestUI32601_MAIN_Variant" showShare="true"
+								showExecuteOnSelection="true"/>
+						</f:heading>
+						<f:snappedContent>
+							<Text id="statusText"></Text>
+						</f:snappedContent>
+					</f:DynamicPageTitle>
+				</f:title>
+				<f:header>
+					<f:DynamicPageHeader pinnable="true">
+						<f:content>
+							<!--<smartForm:SmartForm id="smartForm" title="TimeSheet 개인입력">-->
+							<!--	<smartForm:Group label="기준일">-->
+							<!--		<smartForm:GroupElement>-->
+							<!--			<smartField:SmartField value="ProductId" />-->
+							<!--		</smartForm:GroupElement>-->
+							<!--		<smartForm:GroupElement label="IGNORE">					-->
+							<!--			<smartField:SmartField textLabel="{Name}" value="{Name}" />-->
+							<!--		</smartForm:GroupElement>-->
+							<!--		<smartForm:GroupElement tooltip="{i18n>CAT_TOOLTIP}" label="{i18n>CAT_LABEL}" >-->
+							<!--			<smartField:SmartField value="{Category}">-->
+							<!--				<smartField:configuration>-->
+							<!--					<smartField:Configuration controlType="dropDownList"-->
+							<!--						displayBehaviour="descriptionAndId" />-->
+							<!--				</smartField:configuration>-->
+							<!--			</smartField:SmartField>-->
+							<!--		</smartForm:GroupElement>-->
+							<!--		<smartForm:GroupElement>-->
+							<!--			<smartField:SmartField value="{Description}"  visible="{path: 'test>/visible', formatter: '.fnFormatter'}"/>-->
+							<!--		</smartForm:GroupElement>-->
+							<!--		<smartForm:GroupElement>-->
+							<!--			<smartField:SmartField value="{Price}" />-->
+							<!--		</smartForm:GroupElement>-->
+							<!--	</smartForm:Group>-->
+							<!--</smartForm:SmartForm>-->
+							<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Z_QUERY_FLIGHTBOOKINGS" considerSelectionVariants="true" useToolbar="false">
+								<smartFilterBar:controlConfiguration></smartFilterBar:controlConfiguration>
+							</smartFilterBar:SmartFilterBar>
+						</f:content>
+					</f:DynamicPageHeader>
+				</f:header>
+				<f:content>
+					<!--initiallyVisibleFields="carrid,connid,fldate,bookid,loccuram"-->
+					<smartTable:SmartTable id="smartTable" entitySet="Z_QUERY_FLIGHTBOOKINGS" smartFilterId="smartFilterBar" useExportToExcel="true"
+						useVariantManagement="false" tableType="AnalyticalTable" useTablePersonalisation="true" header="Line Items" showRowCount="true"
+						enableAutoBinding="true">
+						<!--<table:AnalyticalTable id="idTableCustom" visibleRowCountMode="Auto" selectionMode="Single">-->
+						<!--	<table:columns>-->
+						<!--		<table:AnalyticalColumn id="carrid" hAlign="Center" leadingProperty="carrid" width="4rem">-->
+						<!--			<table:customData>-->
+						<!--				<core:CustomData key="p13nData" value='\{"columnKey": "carrid","maxLength": "5","columnIndex": "0","leadingProperty": "carrid"}'/>-->
+						<!--			</table:customData>-->
+						<!--			<Text text="{i18n>carrid}" maxLines="1"/>-->
+						<!--			<table:template>-->
+						<!--				<Text text="{carrid}" maxLines="1" textAlign="Center"/>-->
+						<!--			</table:template>-->
+						<!--		</table:AnalyticalColumn>-->
+						<!--	</table:columns>-->
+						<!--</table:AnalyticalTable>-->
+						<!--showTablePersonalisation="true" enableAutoBinding="true">-->
+						<!--<table:AnalyticalTable id="idTableCustom" visibleRowCountMode="Auto">-->
+						<!--	<table:columns>-->
+						<!--		<table:AnalyticalColumn id="Connid" leadingProperty="Connid">-->
+						<!--			<Text text="Connection"></Text>-->
+						<!--			<table:template>-->
+						<!--				<Text text="{Connid}"></Text>-->
+						<!--			</table:template>-->
+						<!--		</table:AnalyticalColumn>-->
+						<!--	</table:columns>-->
+						<!--</table:AnalyticalTable>-->
+						<!--beforeRebindTable="onBeforeRebindTable">-->
+						<!--editable="true"-->
+					</smartTable:SmartTable>
+					<!--<VBox fitContainer="true">-->
+					<!--	<smartForm:SmartForm id="smartForm" title="TimeSheet 개인입력">-->
+					<!--			<smartForm:Group label="기준일">-->
+					<!--				<smartForm:GroupElement>-->
+					<!--					<smartField:SmartField value="ProductId" />-->
+					<!--				</smartForm:GroupElement>-->
+					<!--		    	</smartForm:Group>-->
+					<!--		</smartForm:SmartForm>-->
+					<!--	<smartTable:SmartTable id="smartTable"-->
+					<!--			    entitySet="CardListSet" smartFilterId="smartFilterBar" -->
+					<!--			    useExportToExcel="true" useVariantManagement="false"-->
+					<!--			    tableType="ResponsiveTable"-->
+					<!--			    useTablePersonalisation="true" header="Line Items" showRowCount="true">-->
+					<!--	</smartTable:SmartTable>-->
+					<!--</VBox>-->
+					<!--<smartForm:SmartForm id="smartForm" title="TimeSheet 개인입력">-->
+					<!--			<smartForm:Group label="기준일">-->
+					<!--				<smartForm:GroupElement>-->
+					<!--					<smartField:SmartField value="ProductId" />-->
+					<!--				</smartForm:GroupElement>-->
+					<!--		    	</smartForm:Group>-->
+					<!--		</smartForm:SmartForm>-->
+					<!--<Table id="table"-->
+					<!--	items="{-->
+					<!--		path: '/SflightListSet',-->
+					<!--		sorter: {-->
+					<!--			path: 'Carrid'-->
+					<!--		}-->
+					<!--	}"-->
+					<!-->-->
+					<!--<columns>-->
+					<!--	<Column-->
+					<!--		width="12em">-->
+					<!--		<Text text="Airline Code" />-->
+					<!--	</Column>-->
+					<!--	<Column-->
+					<!--		minScreenWidth="Tablet"-->
+					<!--		demandPopin="true">-->
+					<!--		<Text text="Connection" />-->
+					<!--	</Column>-->
+					<!--</columns>	-->
+					<!--<items>-->
+					<!--	<ColumnListItem>-->
+					<!--		<cells>-->
+					<!--			<Text -->
+					<!--				text="{Carrid}"/>-->
+					<!--			<Text-->
+					<!--				text="{Connid}" />-->
+					<!--		</cells>-->
+					<!--	</ColumnListItem>-->
+					<!--</items>-->
+					<!--editable="true"-->
+					<!--</Table>-->
+				</f:content>
+				<f:footer>
+					<Bar>
+						<contentRight>
+							<ToolbarSpacer/>
+							<Button text="{i18n>CreateNew}" press=".onPressCreateNew" type="Emphasized"/>
+						</contentRight>
+					</Bar>
+				</f:footer>
+			</f:DynamicPage>
+		</pages>
+	</App>
+</mvc:View>
